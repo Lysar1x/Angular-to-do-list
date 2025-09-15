@@ -1,1 +1,8 @@
-<p>task-list works!</p>
+<h1>Mi Lista de Tareas</h1>
+<input type="text" [(ngModel)]="nuevaTarea">
+<button (click)="agregarTarea()">Agregar</button>
+<ul>
+    <li *ngFor="let tarea of listadeTareas">
+        {{ tarea }}
+    </li>
+</ul>
