@@ -1,3 +1,6 @@
+# Angular-to-do-list
+Proyecto de práctica de Angular que implementa una lista de tareas. Este proyecto se enfoca en dominar los principales conceptos de data binding (Interpolación, Property Binding, Event Binding y Two-way Binding) y la comunicación entre componentes a través de @Input y @Output.
+
 # ToDoList
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
