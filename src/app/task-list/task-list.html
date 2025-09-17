@@ -1,9 +1,11 @@
+<h1>Mi Lista de Tareas</h1>
+
 <div class="task-input-container">
   <input type="text" [(ngModel)]="nuevaTarea" placeholder="Agregar nueva tarea...">
   <button (click)="agregarTarea()">Agregar</button>
 </div>
 
-<h1>Mi Lista de Tareas</h1>
+<p *ngIf="mensajeError" class="error-message">{{ mensajeError }}</p>
 
 <ul>
   <li *ngFor="let tarea of listadeTareas; let i = index">
