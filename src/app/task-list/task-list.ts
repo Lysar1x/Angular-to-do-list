@@ -15,21 +15,25 @@ listadeTareas: string[] = [];
 mensajeError: string = '';
 
 agregarTarea() {
-  if (this.nuevaTarea.trim() !== '') {
-    // 1. Verificamos si la tarea ya existe en la lista
-    const tareaExistente = this.listadeTareas.find(tarea => tarea.toLowerCase() === this.nuevaTarea.toLowerCase());
-
-    // 2. Si no existe, la agregamos
-    if (!tareaExistente) {
-      this.listadeTareas.push(this.nuevaTarea);
-      this.nuevaTarea = ''; // Limpiamos el campo
-    } else {
-      // Opcional: Podrías mostrar un mensaje de error aquí
-      alert('¡Esta tarea ya existe!');
-    }
+  if (this.nuevaTarea.trim() === '') {
+    this.mensajeError = 'La tarea no puede estar vacía.';
+    return; // <--- Agrega este `return`
   }
-}
 
+  const tareaExistente = this.listadeTareas.find(
+    (tarea) => tarea.toLowerCase() === this.nuevaTarea.toLowerCase()
+  );
+
+  if (tareaExistente) {
+    this.mensajeError = '¡Esta tarea ya existe!';
+    return;
+  }
+
+  this.listadeTareas.push(this.nuevaTarea);
+  this.nuevaTarea = '';
+  this.mensajeError = ''; // <--- Borra el mensaje de error si todo es correcto
+}
+  
 eliminarTarea(indice: number) {
   this.listadeTareas.splice(indice, 1);
 }
