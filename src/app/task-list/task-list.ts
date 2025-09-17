@@ -15,9 +15,17 @@ listadeTareas: string[] = [];
 
 agregarTarea() {
   if (this.nuevaTarea.trim() !== '') {
-    this.listadeTareas.push(this.nuevaTarea);
-    this.nuevaTarea = ''; //Limpia el campo de entrada
-    
+    // 1. Verificamos si la tarea ya existe en la lista
+    const tareaExistente = this.listadeTareas.find(tarea => tarea.toLowerCase() === this.nuevaTarea.toLowerCase());
+
+    // 2. Si no existe, la agregamos
+    if (!tareaExistente) {
+      this.listadeTareas.push(this.nuevaTarea);
+      this.nuevaTarea = ''; // Limpiamos el campo
+    } else {
+      // Opcional: Podrías mostrar un mensaje de error aquí
+      alert('¡Esta tarea ya existe!');
+    }
   }
 }
 
