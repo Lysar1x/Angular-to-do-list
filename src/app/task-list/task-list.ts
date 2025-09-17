@@ -17,6 +17,11 @@ agregarTarea() {
   if (this.nuevaTarea.trim() !== '') {
     this.listadeTareas.push(this.nuevaTarea);
     this.nuevaTarea = ''; //Limpia el campo de entrada
+    
   }
+}
+
+eliminarTarea(indice: number) {
+  this.listadeTareas.splice(indice, 1);
 }
 }

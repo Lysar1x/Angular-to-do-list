@@ -2,7 +2,8 @@
 <input type="text" [(ngModel)]="nuevaTarea">
 <button (click)="agregarTarea()">Agregar</button>
 <ul>
-    <li *ngFor="let tarea of listadeTareas">
+    <li *ngFor="let tarea of listadeTareas; let i = index">
         {{ tarea }}
+        <button (click)="eliminarTarea(i)">Eliminar</button>
     </li>
 </ul>
