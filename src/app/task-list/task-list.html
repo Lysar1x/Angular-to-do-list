@@ -1,9 +1,13 @@
+<div class="task-input-container">
+  <input type="text" [(ngModel)]="nuevaTarea" placeholder="Agregar nueva tarea...">
+  <button (click)="agregarTarea()">Agregar</button>
+</div>
+
 <h1>Mi Lista de Tareas</h1>
-<input type="text" [(ngModel)]="nuevaTarea">
-<button (click)="agregarTarea()">Agregar</button>
+
 <ul>
-    <li *ngFor="let tarea of listadeTareas; let i = index">
-        {{ tarea }}
-        <button (click)="eliminarTarea(i)">Eliminar</button>
-    </li>
+  <li *ngFor="let tarea of listadeTareas; let i = index">
+    {{ tarea }}
+    <button (click)="eliminarTarea(i)">Eliminar</button>
+  </li>
 </ul>
