@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class TaskList {
 nuevaTarea: string = '';
 listadeTareas: string[] = [];
+mensajeError: string = '';
 
 agregarTarea() {
   if (this.nuevaTarea.trim() !== '') {
